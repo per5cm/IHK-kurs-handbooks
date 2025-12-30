@@ -1,7 +1,5 @@
 # Active Directory Admin Handbook
 
-![Poster](images/retro_gpo.png)
-
 ## Epigraph
 
 >Active Directory Survival Guide
