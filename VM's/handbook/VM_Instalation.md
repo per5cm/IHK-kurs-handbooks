@@ -81,7 +81,7 @@ Enter number of interface: 1 (WAN)
 Configure IPv4 via DHCP? (y/n): n
 Enter IPv4 address: 10.10.10.217
 Enter subnet bit count: 24
-Enter upstream gateway: 10.10.10.1
+Enter upstream gateway: 10.10.10.1 || 10.10.20.1
 Set as default gateway? (y/n): y
 Configure IPv6? (y/n): n
 Enable DHCP server on WAN? (y/n): n
@@ -129,7 +129,7 @@ LAN = `192.178.99.217/24`, DHCP and IPv6 disabled.
 To manage pfSense via browser with HTTPS for security.
 
 **Steps:**  
-1. From a client in the LAN, open browser → `https://192.178.99.217/`
+1. From a client in the LAN, open browser -> `https://192.178.99.217/` **last octet shoud mirror VM**
 2. Accept SSL certificate warning.
 3. Login credentials:
    - Username: `admin`

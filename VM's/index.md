@@ -8,8 +8,8 @@ Hardware is merely a suggestion — the hypervisor is god, and rebooting is pray
 
 ## Index
 - [Windows SetUp](handbook/VM_Windows_Install.md)
-- [VM SetUp](handbook/VM_Instalation.md)
-- [VM Hardening (Optional)](handbook/VM_Hardening.md)
+- [VM Firewall Console SetUp](handbook/VM_Instalation.md)
+- [VM DHCP DNS pfsense SetUp)](handbook/VM_DHCP_DNS.md)
 - [Appendix](Appendix.md)
 
 ---
