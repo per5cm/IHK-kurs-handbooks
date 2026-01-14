@@ -81,7 +81,7 @@ Enter number of interface: 1 (WAN)
 Configure IPv4 via DHCP? (y/n): n
 Enter IPv4 address: 10.10.10.217
 Enter subnet bit count: 24
-Enter upstream gateway: 10.10.10.1 || 10.10.20.1
+Enter upstream gateway: 10.10.20.1 (default IPv4) || 10.10.10.1 || 10.10.10.20
 Set as default gateway? (y/n): y
 Configure IPv6? (y/n): n
 Enable DHCP server on WAN? (y/n): n
