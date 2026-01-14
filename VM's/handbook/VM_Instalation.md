@@ -89,7 +89,7 @@ Revert to HTTP for webConfigurator? (y/n): n
 ```
 
 **Result:**  
-WAN = `10.10.10.217/24`, Gateway = `10.10.10.1`, IPv6 disabled.
+WAN = `10.10.10.217/24`, Gateway = `10.10.10.1` or `10.10.20.1`, IPv6 disabled.
 
 ---
 
@@ -118,8 +118,10 @@ LAN = `192.178.99.217/24`, DHCP and IPv6 disabled.
 
 ## 5. Client Windows Configuration
 
+```bash
 1. IP Address - 192.168.99.218 (or what other ip adress u use)
 2. Gateway - 192.168.99.217 (gateway is ur firewall lan adress)
+```
 
 ## 6. WebConfigurator Access
 
