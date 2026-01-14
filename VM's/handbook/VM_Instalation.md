@@ -103,7 +103,7 @@ To define the internal subnet for servers and clients in the lab.
 Option 2) Set interface(s) IP address
 Enter number of interface: 2 (LAN)
 Configure IPv4 via DHCP? (y/n): n
-Enter IPv4 address: 192.178.99.217
+Enter IPv4 address: 192.168.99.217
 Enter subnet bit count: 24
 Gateway: [Press Enter]
 Configure IPv6? (y/n): n
@@ -116,7 +116,12 @@ LAN = `192.178.99.217/24`, DHCP and IPv6 disabled.
 
 ---
 
-## 5. WebConfigurator Access
+## 5. Client Windows Configuration
+
+1. IP Address - 192.168.99.218 (or what other ip adress u use)
+2. Gateway - 192.168.99.217 (gateway is ur firewall lan adress)
+
+## 6. WebConfigurator Access
 
 **Why:**  
 To manage pfSense via browser with HTTPS for security.
@@ -132,7 +137,7 @@ To manage pfSense via browser with HTTPS for security.
 
 ---
 
-## 6. Connectivity Test
+## 7. Connectivity Test
 
 **Why:**  
 To verify routing and connectivity through pfSense.
@@ -149,7 +154,7 @@ Expected output:
 
 ---
 
-## 7. Firewall Rules – Allowlist Model
+## 8. Firewall Rules – Allowlist Model
 
 **Why:**  
 To follow a Default Deny → Allowlist principle for outbound traffic.
@@ -173,7 +178,7 @@ To follow a Default Deny → Allowlist principle for outbound traffic.
 
 ---
 
-## 8. Security and BSI Alignment
+## 9. Security and BSI Alignment
 
 | Measure | Description | Reason |
 |----------|--------------|--------|
@@ -187,7 +192,7 @@ To follow a Default Deny → Allowlist principle for outbound traffic.
 
 ---
 
-## 9. Maintenance
+## 10. Maintenance
 
 **Backup Configuration:**  
 - *Diagnostics -> Backup/Restore -> Download Configuration*
@@ -203,7 +208,7 @@ To follow a Default Deny → Allowlist principle for outbound traffic.
 
 ---
 
-## 10. Verification Checklist
+## 11. Verification Checklist
 
 | Task | Command / Action | Expected Result |
 |------|------------------|-----------------|
@@ -215,7 +220,7 @@ To follow a Default Deny → Allowlist principle for outbound traffic.
 
 ---
 
-## 11. Notes for Future Improvement
+## 12. Notes for Future Improvement
 
 - Consider migrating LAN to an RFC1918 range (e.g., 192.168.99.0/24) for production setups.
 - Integrate Syslog export for centralized log collection.
