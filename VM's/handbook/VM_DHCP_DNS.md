@@ -31,21 +31,26 @@ Internet
 | Subnet         | —         | `255.255.255.0`      | /24          |
 | Domain         | —         | `lab.local`          | Internal     |
 
-**Never reuse `same IP` on Windows.** Two devices, one IP = packet demons.
+> **Never reuse `same IP` on Windows.** 
+> Two devices, one IP = packet demons.
 
 ---
 
 ## 3. Windows Server configuration
 
 ### a. Static IP
-> Server Manager -> Local Server
-  > Clickt Ethernet
-    > IPv4 -> Properties (Eigenschaften)
-      > Set:
-            - IP: `192.168.99.214/24`
-            - DHCP Server: **Disabled** (Windows handles DHCP)
-            - Gateway: 192.168.99.213 (pfsense virtual console IP address)
-            - Preferred DNS: 192.168.99.214 (DNS must point to itself. Always)
+
+1. Server Manager -> Local Server
+2. Clickt Ethernet
+3. IPv4 -> Properties (Eigenschaften)
+4. Set:
+      - IP: `192.168.99.214/24`
+      - DHCP Server: **Disabled** 
+      > Windows handles DHCP
+      - Gateway: 192.168.99.213 
+      > pfsense virtual console IP address
+      - Preferred DNS: 192.168.99.214 
+      > DNS must point to itself. Always
 
 ---
 
