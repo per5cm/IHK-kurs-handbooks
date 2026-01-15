@@ -11,7 +11,7 @@ Internet
    │
 [ Proxmox vmbr0 ]
    │
-[ pfSense WAN ]  ← DHCP / upstream (must have IP)
+[ pfSense WAN ]  <- DHCP / upstream (must have IP)
 [ pfSense LAN ]  192.168.99.213/24
    │
 [ vmbr1 ]
@@ -45,12 +45,10 @@ Internet
 3. IPv4 -> Properties (Eigenschaften)
 4. Set:
       - IP: `192.168.99.214/24`
-      - DHCP Server: **Disabled** 
-      > Windows handles DHCP
-      - Gateway: 192.168.99.213 
+      - DHCP Server: **Disabled** (Windows handles DHCP)
+      - Gateway: ``192.168.99.213`` 
       > pfsense virtual console IP address
-      - Preferred DNS: 192.168.99.214 
-      > DNS must point to itself. Always
+      - Preferred DNS: ``192.168.99.214`` (DNS must point to itself. Always)
 
 ---
 
