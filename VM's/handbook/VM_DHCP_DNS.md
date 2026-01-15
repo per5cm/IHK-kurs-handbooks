@@ -155,9 +155,9 @@ Internet
 
 ## 5 Bonus
 **in firewall pfsense console reset web UI settings**
-- 0) Logout
-- 1) Assign Interfaces
-- 2) Set Interface(s) IP address
+0) Logout
+1) Assign Interfaces
+2) Set Interface(s) IP address
 > option 3 `Reset webConfigurator password`
 
 **Order matters. *Nudelholz!.***
