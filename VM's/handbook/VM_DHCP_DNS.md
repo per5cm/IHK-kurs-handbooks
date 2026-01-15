@@ -161,3 +161,7 @@ Internet
 > option 3 `Reset webConfigurator password`
 
 **Order matters. *Nudelholz!.***
+
+---
+
+[← Back to Index](../index.md)
