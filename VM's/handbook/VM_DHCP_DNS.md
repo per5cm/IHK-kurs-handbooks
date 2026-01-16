@@ -125,8 +125,7 @@ Add:
 > Bonus points
 - Exclude: ``192.168.99.1 - 192.168.99.99``
 - Exclude: ``192.168.213-214``
-> Leaste time
-> Default is fine.
+> Leaste time Default is fine.
 - Lease Duration - default 8 days
 > weiter
 - Agree with options 
