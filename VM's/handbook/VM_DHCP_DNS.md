@@ -116,15 +116,16 @@ Add:
 1. Tools -> DHCP
 2. Expand: IPv4 -> New Scope (Neuer Bereich)
 3. Wizard opens -> Next (Weiter)
-**Settings**
+
+> Settings
 - Name: ``Lan-Scope``
 - Start IP: ``192.168.99.100``
 - End IP: ``192.168.99.200``
 - Mask: ``255.255.255.0``
-**Bonus points**
+> Bonus points
 - Exclude: ``192.168.99.1 - 192.168.99.99``
 - Exclude: ``192.168.213-214``
-**Leaste time**
+> Leaste time
 > Default is fine.
 - Lease Duration - default 8 days
 > weiter
