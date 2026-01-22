@@ -1,116 +1,149 @@
-# Tailwind CSS with Blazor WebAssembly (Standalone CLI)
+# Tailwind CSS v4 Setup for Blazor (STANDALONE EXE, NO BULLSHIT)
 
-This guide explains how to install and use **Tailwind CSS via the standalone CLI binary**
-in a **Blazor WebAssembly (standalone)** project — **no Node.js required**.
-
----
-
-## 1. Download Tailwind CLI
-
-Download the standalone Tailwind binary for your OS:
-
-https://tailwindcss.com/docs/installation/standalone
-
-For Windows:
-- Rename `tailwindcss-windows-x64.exe` → `tailwindcss.exe`
+This guide is for **Tailwind CSS v4.x** using the **standalone `tailwindcss.exe`**.
+No npm CLI. No `npx`. No mixed versions.
 
 ---
 
-## 2. Recommended Project Structure
+## 0. Folder Structure (FINAL)
 
-BlazorApp/
-├─ Tools/
-│ └─ tailwindcss.exe
-├─ Styles/
-│ └─ tailwind-input.css
+BlazorWeb/
+│
 ├─ wwwroot/
 │ └─ css/
-│ └─ tailwind.css (generated)
+│ └─ tailwind.css <-- GENERATED (DO NOT EDIT)
+│
+├─ Styles/
+│ └─ tailwind-input.css <-- YOU EDIT THIS
+│
+├─ Tools/
+│ ├─ tailwindcss.exe
+│ └─ watch-tailwind.ps1
+│
 ├─ tailwind.config.js
-└─ wwwroot/index.html
+└─ index.html
 
 
 ---
 
-## 3. Create Tailwind Input File
+## 1. `tailwind-input.css` (CRITICAL – v4 ENTRYPOINT)
 
-**Styles/tailwind-input.css**
+⚠️ **For Tailwind v4, this is the ONLY correct entry.**
 
 ```css
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Custom styles go below */
+
+❌ Do NOT use:
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-⚠️ This file is only for the compiler.
-⚠️ Do NOT reference it in HTML.
-4. Create Tailwind Config
-
-tailwind.config.js
+Those are Tailwind v3 syntax and will cause partial / broken output in v4.
+2. tailwind.config.js
 
 module.exports = {
   content: [
-    "./**/*.{html,razor,cs}",
-    "./wwwroot/**/*.html"
+    "./**/*.razor",
+    "./**/*.html",
+    "./**/*.cshtml"
   ],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
-};
+  plugins: []
+}
 
-This defines which files Tailwind scans for class names.
-5. Build Tailwind CSS
+Nothing fancy. This just tells Tailwind where to scan.
+3. index.html
 
-Run from the project root:
+Only load the generated CSS:
 
-.\Tools\tailwindcss.exe ^
-  -c .\tailwind.config.js ^
-  -i .\Styles\tailwind-input.css ^
-  -o .\wwwroot\css\tailwind.css
+<link href="css/tailwind.css" rel="stylesheet" />
 
-If successful:
-
-Done in XXms
-
-6. Load Tailwind in Blazor
-
-Edit wwwroot/index.html
-
-<link rel="stylesheet" href="css/tailwind.css" />
-
-❌ Remove app.css if you want Tailwind-only
 ❌ Do NOT load tailwind-input.css
-7. Fix Blazor Layout (Critical)
+❌ Do NOT load app.css (unless you intentionally want it)
+4. Build Tailwind (ONE COMMAND)
 
-A Blazor layout must render exactly one @Body.
+Run this from the project root:
 
-Shared/MainLayout.razor
+.\Tools\tailwindcss.exe `
+  -c tailwind.config.js `
+  -i .\Styles\tailwind-input.css `
+  -o .\wwwroot\css\tailwind.css `
+  --watch
 
-@inherits LayoutComponentBase
+Expected result:
 
-<main class="min-h-screen bg-zinc-950 text-zinc-100 p-6">
-    <div class="prose prose-invert max-w-none">
-        @Body
-    </div>
-</main>
+    tailwind.css jumps to hundreds of lines
 
-❌ Never render @Body twice
-❌ Double @Body causes duplicated UI and text
-8. Test Tailwind
+    Changes apply live when editing .razor files
 
-Pages/Home.razor
+If that does NOT happen → stop. Don’t continue.
+5. Sanity Test (MANDATORY)
 
-<h1 class="text-red-500 hover:text-green-400 transition">
-    Tailwind is alive.
+Put this in any .razor file:
+
+<h1 class="text-red-500 text-3xl font-bold">
+  Tailwind works
 </h1>
 
-<button class="mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded">
-    Click me
-</button>
+If it’s not red → Tailwind is not wired correctly.
+6. Why the Page Turns Dark (NOT MAGIC)
 
-If colors and hover work → Tailwind is correctly installed.
-9. Rebuild When Styles Change
+Tailwind does NOTHING by default.
 
-Whenever you add or change Tailwind classes:
+Your page is dark ONLY if YOU did one of these:
+A) In tailwind-input.css
 
-.\Tools\tailwindcss.exe -c .\tailwind.config.js -i .\Styles\tailwind-input.css -o .\wwwroot\css\tailwind.css
+@layer base {
+  body {
+    background: #0b1020;
+    color: white;
+  }
+}
+
+B) In MainLayout.razor
+
+<main class="bg-zinc-950 text-zinc-100">
+
+Remove those → page goes white again.
+7. Rules (NEVER BREAK THESE)
+
+    ❌ Do NOT mix npm + exe
+
+    ❌ Do NOT use v3 syntax with v4
+
+    ❌ Do NOT edit tailwind.css
+
+    ❌ Do NOT trust random blog posts
+
+    ✅ Always check the Tailwind version header in tailwind.css
+
+8. Version Check (WHEN IN DOUBT)
+
+At the top of tailwind.css you should see:
+
+/*! tailwindcss v4.x.x | MIT License | https://tailwindcss.com */
+
+If it says v4 → use @import "tailwindcss";
+If it says v3 → use @tailwind base/components/utilities;
+
+Never mix them.
+
+
+---
+
+### Final pushback (earned)
+You weren’t “missing something obvious.”  
+You were **correctly suspicious** when one line fixed everything — that’s exactly how version mismatches behave.
+
+Now you’ve got:
+- the right mental model
+- the right entrypoint
+- the right guide
+
+This one won’t stab you in the back.
