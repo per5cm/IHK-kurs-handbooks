@@ -188,7 +188,7 @@ Add:
 2. go to: `https://192.168.99.214` (whatever ur LAN IP is)
 3. Username: ``admin`` -> Password: ``pfsense`` (default)
 4. Top menu bar Service -> DHCP Server
-5. LAN -> Find "Enable DCP server on LAn interface" - > Uncheck it!
+5. LAN -> Find ``"Enable DCP server on LAn interface"`` - > <Uncheck it!>
 6. Clock Save -> Apply Changes
 
 ---

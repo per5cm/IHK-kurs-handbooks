@@ -103,12 +103,12 @@ To define the internal subnet for servers and clients in the lab.
 Option 2) Set interface(s) IP address
 Enter number of interface: 2 (LAN)
 Configure IPv4 via DHCP? (y/n): n
-Enter IPv4 address: 192.168.99.217
+Enter IPv4 address: 192.168.99.214
 Enter subnet bit count: 24
 Gateway: [Press Enter]
 > Do NOT enter 10.10.20.1 or anything else here!
 Configure IPv6? (y/n): n
-Enable DHCP server on LAN? (y/n): n7
+Enable DHCP server on LAN? (y/n): n
 Revert to HTTP for webConfigurator? (y/n): n
 ```
 
