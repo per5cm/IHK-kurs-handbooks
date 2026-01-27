@@ -79,7 +79,7 @@ To define the external connection that reaches the upstream gateway.
 Option 2) Set interface(s) IP address
 Enter number of interface: 1 (WAN)
 Configure IPv4 via DHCP? (y/n): n
-Enter IPv4 address: 10.10.20.217
+Enter IPv4 address: 10.10.20.214 (or whatever ur server number is)
 Enter subnet bit count: 24
 Enter upstream gateway: 10.10.20.1 (default IPv4) || 10.10.10.1 || 10.10.10.20
 Set as default gateway? (y/n): y
