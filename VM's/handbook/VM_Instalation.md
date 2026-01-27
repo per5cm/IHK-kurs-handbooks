@@ -79,7 +79,7 @@ To define the external connection that reaches the upstream gateway.
 Option 2) Set interface(s) IP address
 Enter number of interface: 1 (WAN)
 Configure IPv4 via DHCP? (y/n): n
-Enter IPv4 address: 10.10.10.217
+Enter IPv4 address: 10.10.20.217
 Enter subnet bit count: 24
 Enter upstream gateway: 10.10.20.1 (default IPv4) || 10.10.10.1 || 10.10.10.20
 Set as default gateway? (y/n): y
@@ -106,8 +106,9 @@ Configure IPv4 via DHCP? (y/n): n
 Enter IPv4 address: 192.168.99.217
 Enter subnet bit count: 24
 Gateway: [Press Enter]
+> Do NOT enter 10.10.20.1 or anything else here!
 Configure IPv6? (y/n): n
-Enable DHCP server on LAN? (y/n): n
+Enable DHCP server on LAN? (y/n): n7
 Revert to HTTP for webConfigurator? (y/n): n
 ```
 

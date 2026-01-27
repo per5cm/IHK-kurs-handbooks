@@ -12,11 +12,11 @@ Internet
 [ Proxmox vmbr0 ]
    │
 [ pfSense WAN ]  <- DHCP / upstream (must have IP)
-[ pfSense LAN ]  192.168.99.213/24
+[ pfSense LAN ]  192.168.99.214/24
    │
 [ vmbr1 ]
    │
-[ Windows Server ] 192.168.99.214 (DNS + DHCP)
+[ Windows Server ] 192.168.99.213 (DNS + DHCP)
 [ Clients ] DHCP
 ```
 ---
@@ -25,8 +25,8 @@ Internet
 
 | Device         | Interface | IP                   | Notes        |
 | -------------- | --------- | -------------------- | ------------ |
-| pfSense        | LAN       | `192.168.99.213`     | Gateway only | <- Firewall Console
-| Windows Server | NIC       | `192.168.99.214`     | DNS + DHCP   |
+| pfSense        | LAN       | `192.168.99.214`     | Gateway only | <- Firewall Console
+| Windows Server | NIC       | `192.168.99.213`     | DNS + DHCP   |
 | DHCP Pool      | —         | `192.168.99.100–200` | Clients      |
 | Subnet         | —         | `255.255.255.0`      | /24          |
 | Domain         | —         | `lab.local`          | Internal     |
@@ -44,11 +44,11 @@ Internet
 2. Clickt Ethernet
 3. IPv4 -> Properties (Eigenschaften)
 4. Set:
-      - IP: `192.168.99.214/24`
+      - IP: `192.168.99.213/24`
       - DHCP Server: **Disabled** (Windows handles DHCP)
-      - Gateway: ``192.168.99.213`` 
+      - Gateway: ``192.168.99.214`` 
       > pfsense virtual console IP address
-      - Preferred DNS: ``192.168.99.214`` (DNS must point to itself. Always)
+      - Preferred DNS: ``192.168.99.213`` (DNS must point to itself. Always)
 
 ---
 
@@ -70,7 +70,7 @@ Internet
 
 ### c. DNS Reverse Lookup Zone
 **Still in DNS Manager:
-
+> Tools ->
 1. Right click Reverse Lookup Zone
 2. New Zone
    - Zone Type: Primary Zone
@@ -97,15 +97,18 @@ Internet
 ## Add Host (A record)
 
 Inside `lab.local`:
-1. Right click -> New Host(A)
+1. Right click -> New Host(A) (Neuer Host(A))
    - Name: `srv-dc01`
-   - IP: ``192.168.99.213``
+   - IP: ``192.168.99.214`` (host ip is the pfsense lan ip adress)
    - V Create associated PTR record 
    >this checkbox matters. it auto wires reverse lookup.
 
 **DNS Manager -> Server Properties -> Fowarders**
+1. Right-click your server in manager(WIN-85LMUKPGSH etc.)
+2. Properties (Eigenschaften)
+3. Fowarders (Weiterleitungen)
 Add:
-   - `192.168.99.213`
+   - `192.168.99.214` <YOUR PFSENSE LAN IP ADDRES>
 > Windows DNS resolves internal names.
 > pfSense fowards external queries.
 
@@ -120,19 +123,29 @@ Add:
 > Settings
 - Name: ``Lan-Scope``
 - Start IP: ``192.168.99.100``
-- End IP: ``192.168.99.200``
+- End IP: ``192.168.99.250``
 - Mask: ``255.255.255.0``
 > Bonus points
-- Exclude: ``192.168.99.1 - 192.168.99.99``
-- Exclude: ``192.168.213-214``
+- Exclude: ``192.168.213-214`` (your own server IP and Host IP example ur pfsense LAN)
 > Leaste time Default is fine.
 - Lease Duration - default 8 days
 > weiter
 - Agree with options 
 > Ja, diese Optionen jetzt konfigurieren
+- New Scope Wizzard (Bereichserstellung-Assistent)
+> Must input ur LAN IP Adress for standard gateway for clients ``192.168.99.214`` <- ur pfsense LAN ip
+- DNS-Server configuration 
+> Domain name `lab.local`. Check in window you see your servers IP adress e.g. `192.168.99.213` and google dns eg `8.8.4.4` or `8.8.8.8`.
+- WIN-Server
+> For short leave it empty.
 ---
 
 ### f. DHCP Options (this is soul)
+
+1. Server Manager
+2. Tools
+3. DHCP
+> a) Your server name, b) IPv4, c) <Your Scope> Right-Click
 
 **Right click Scope, then configurate options**
 > Bereichsoptionen -> Optionen konfigurieren
