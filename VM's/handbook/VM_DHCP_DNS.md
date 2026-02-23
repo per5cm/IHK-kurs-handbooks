@@ -54,10 +54,10 @@ Internet
 
 ### b. Install DNS + DHCP roles
 
-1. Server Manager -> Add roles and features
+1. Server Manager -> Add roles and features (Rollen und Features hinzufügen)
 
-   - Role-based installation
-   - Select this server
+   - Role-based installation (Verwalten)
+   - Select this server 
    - Check: 
      > V DNS Server 
      > V DHCP Server

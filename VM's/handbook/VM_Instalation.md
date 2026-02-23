@@ -11,9 +11,9 @@ To configure a pfSense firewall within a Proxmox virtualized lab environment fol
 - **Platform:** Proxmox Virtual Environment (VE)
 - **Firewall:** pfSense 2.7.0-RELEASE (amd64)
 - **Hardware (VM):** 1 CPU, 1024 MB RAM, 20 GB Disk, 2 NICs (optional)
-- **Gateway:** 10.10.10.1  (optional)
-- **WAN (vtnet0):** 10.10.10.217 / 24  (optional)
-- **LAN (em0):** 192.178.99.217 / 24  (optional)
+- **Gateway:** 10.10.20.1  (optional)
+- **WAN (vtnet0):** 10.10.20.214 / 24  (optional)
+- **LAN (em0):** 192.178.99.214 / 24  (optional)
 - **Access:** HTTPS (WebConfigurator)  
 - **DHCP:** Disabled  
 - **IPv6:** Disabled
@@ -113,7 +113,7 @@ Revert to HTTP for webConfigurator? (y/n): n
 ```
 
 **Result:**  
-LAN = `192.178.99.217/24`, DHCP and IPv6 disabled.
+LAN = `192.178.99.214/24`, DHCP and IPv6 disabled.
 
 ---
 
@@ -121,7 +121,7 @@ LAN = `192.178.99.217/24`, DHCP and IPv6 disabled.
 
 ```bash
 1. IP Address - 192.168.99.218 (or what other ip adress u use)
-2. Gateway - 192.168.99.217 (gateway is ur firewall lan adress)
+2. Gateway - 192.168.99.214 (gateway is ur firewall lan adress)
 ```
 
 ## 6. WebConfigurator Access
@@ -130,7 +130,7 @@ LAN = `192.178.99.217/24`, DHCP and IPv6 disabled.
 To manage pfSense via browser with HTTPS for security.
 
 **Steps:**  
-1. From a client in the LAN, open browser -> `https://192.178.99.217/` **last octet shoud mirror VM**
+1. From a client in the LAN, open browser -> `https://192.178.99.214/` **last octet shoud mirror VM**
 2. Accept SSL certificate warning.
 3. Login credentials:
    - Username: `admin`
@@ -216,8 +216,8 @@ To follow a Default Deny → Allowlist principle for outbound traffic.
 | Task | Command / Action | Expected Result |
 |------|------------------|-----------------|
 | Test WAN connectivity | `ping 8.8.8.8` | Successful replies |
-| Test LAN connectivity | `ping 192.178.99.217` | Successful replies |
-| Check WebGUI | Open `https://192.178.99.217` | Login page visible |
+| Test LAN connectivity | `ping 192.178.99.214` | Successful replies |
+| Check WebGUI | Open `https://192.178.99.214` | Login page visible |
 | Confirm NAT | Firewall -> NAT -> Outbound | Auto rule for 192.178.99.0/24 |
 | Review Logs | Status -> System Logs -> Firewall | Normal activity only |
 
