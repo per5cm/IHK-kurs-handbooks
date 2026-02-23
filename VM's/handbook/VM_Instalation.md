@@ -11,9 +11,9 @@ To configure a pfSense firewall within a Proxmox virtualized lab environment fol
 - **Platform:** Proxmox Virtual Environment (VE)
 - **Firewall:** pfSense 2.7.0-RELEASE (amd64)
 - **Hardware (VM):** 1 CPU, 1024 MB RAM, 20 GB Disk, 2 NICs (optional)
-- **Gateway:** 10.10.20.1  (optional)
-- **WAN (vtnet0):** 10.10.20.214 / 24  (optional)
-- **LAN (em0):** 192.178.99.214 / 24  (optional)
+- **Gateway:** `10.10.20.1`  (optional)
+- **WAN (vtnet0):** `10.10.20.214 / 24`  (optional)
+- **LAN (em0):** `192.178.99.214 / 24`  (optional)
 - **Access:** HTTPS (WebConfigurator)  
 - **DHCP:** Disabled  
 - **IPv6:** Disabled

@@ -18,7 +18,7 @@ To install and configure Windows 11 within a virtualized environment (Proxmox VE
 
 ---
 
-## 1. Proxmox Setup
+## 0. a) Proxmox Setup
 
 **Why:**  
 To prepare a clean and isolated virtual machine environment for Windows installation.
@@ -39,7 +39,7 @@ To prepare a clean and isolated virtual machine environment for Windows installa
 
 ---
 
-## 2. Windows Setup Wizard
+## 1. Windows Setup Wizard
 
 **Why:**  
 To perform a clean installation and avoid OEM bloatware or unintended configurations.
@@ -56,7 +56,7 @@ To perform a clean installation and avoid OEM bloatware or unintended configurat
 
 ---
 
-## 3. Out-of-Box Experience (OOBE)
+## 2. Out-of-Box Experience (OOBE)
 
 **Why:**  
 To ensure privacy-friendly, local-account-first configuration.
@@ -75,7 +75,7 @@ To ensure privacy-friendly, local-account-first configuration.
 
 ---
 
-## 4. Driver Installation (VirtIO)
+## 3. Driver Installation (VirtIO)
 
 **Why:**  
 To enable optimized I/O performance under Proxmox.
@@ -91,7 +91,7 @@ To enable optimized I/O performance under Proxmox.
 
 ---
 
-## 5. Network Configuration
+## 4. Network Configuration
 
 **Why:**  
 To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
@@ -102,13 +102,13 @@ To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
 3. Assign manually (if static needed):  
    - IP: `192.178.99.150` (example)  
    - Subnet: `255.255.255.0`  
-   - Gateway: `192.178.99.217` (pfSense LAN)  
+   - Gateway: `192.178.99.214` (pfSense LAN)  
    - DNS: `8.8.8.8` or internal DNS.  
 4. Disable IPv6 if not required.
 
 ---
 
-## 6. System Hardening (BSI-Aligned Basics)
+## 5. System Hardening (BSI-Aligned Basics)
 
 | Description | Reason |
 |--------------|--------|
@@ -122,7 +122,7 @@ To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
 
 ---
 
-## 7. Verification Checklist
+## 6. Verification Checklist
 
 | Task | Command / Action | Expected Result |
 |------|------------------|-----------------|
@@ -134,7 +134,7 @@ To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
 
 ---
 
-## 8. Maintenance
+## 7. Maintenance
 
 **System Update:**  
 - Start -> Settings -> Windows Update -> Check for updates.  
@@ -150,7 +150,7 @@ To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
 
 ---
 
-## 9. Notes for Future Improvement
+## 8. Notes for Future Improvement
 
 - Integrate into Active Directory lab (once DC is ready).  
 - Test RDP and VNC access under firewall rules.  
