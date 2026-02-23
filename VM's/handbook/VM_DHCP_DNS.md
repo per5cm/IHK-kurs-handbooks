@@ -149,9 +149,9 @@ Add:
 
 **Right click Scope, then configurate options**
 > Bereichsoptionen -> Optionen konfigurieren
-- 003 Router: `192.168.99.214`
-- 006 DNS Server: `192.168.99.213`
-- 015 DNS Domain Name: `lab.local`
+- 003 Router: `192.168.99.214` - your firewall IP adress
+- 006 DNS Server: `192.168.99.213` - your server IP adress
+- 015 DNS Domain Name: `lab.local` - name so the scope knows in what domain it works
 
 **Finish wizard -> Activate Scope**
 > Missconfigure and nothing works
