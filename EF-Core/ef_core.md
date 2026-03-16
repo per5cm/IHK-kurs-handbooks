@@ -1,7 +1,6 @@
-Markdown# EF Core + SQLite – Quick Start (Minimal & Reliable)
+# EF Core + SQLite – Quick Start, minimal.
 
-For .NET 8/9 – small apps, prototypes, learning projects  
-Goal: Working DB + basic CRUD fast, reusable skeleton.
+# Goal: Working Local DB + basic CRUD fast, reusable skeleton.
 
 ## 1. Packages
 
@@ -102,3 +101,4 @@ public class GroceryService
     }
 }
 ```
+[← Back to Index](../index.md)
