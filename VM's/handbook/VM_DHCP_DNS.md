@@ -4,7 +4,7 @@
 
 ---
 
-## 1. Network Topology (Baseline)
+## 1. Network Topology
 
 ```
 Internet
@@ -21,7 +21,7 @@ Internet
 ```
 ---
 
-## 2. IP Address Plan (assumptions)
+## 2. IP Address Plan
 
 | Device         | Interface | IP                   | Notes        |
 | -------------- | --------- | -------------------- | ------------ |
