@@ -15,6 +15,7 @@
 ---
 
 - Network -> NAT Network for WiFi connection
+
 1. File 
 2. Tools
 3. Network
@@ -25,6 +26,8 @@
 > ping 8.8.8.8 c- 4 or ping google.com c- 4 - to check network connection
 
 - Bridged -> for cable connection
+
+1. Promiscious mode: Allow All.
 
 ---
 
