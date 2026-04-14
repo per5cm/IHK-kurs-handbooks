@@ -7,9 +7,9 @@ Here we spawn, snapshot, and obliterate worlds before lunch.
 Hardware is merely a suggestion — the hypervisor is god, and rebooting is prayer.
 
 ## Index
-- [Windows SetUp](handbook/VM_Windows_Install.md)
-- [VM Firewall Console SetUp](handbook/VM_Instalation.md)
-- [VM DHCP DNS pfsense SetUp)](handbook/VM_DHCP_DNS.md)
+- [Windows SetUp](handbook/Windows-Install.md)
+- [VM Firewall Console SetUp](handbook/Installation.md)
+- [VM DHCP DNS pfsense SetUp)](handbook/DHCP-DNS.md)
 - [Appendix](Appendix.md)
 
 ---
