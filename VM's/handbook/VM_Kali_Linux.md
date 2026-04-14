@@ -88,10 +88,10 @@ exit
 
 ## Active, Passive Information Gathering
 
-**Why** Active Kali Linux --> Inrogmation <--> Target Website --> Kali Linux.
-**Why** Pasive Kali Linux --> Middle Source <--> Target Website --> Kali Linux.
+**Active** Active Kali Linux --> Information <--> Target Website --> Kali Linux.
+**Passive** Pasive Kali Linux --> Middle Source <--> Target Website --> Kali Linux.
 
-# Things to search for
+### Things to search for
 
 ---
 
@@ -101,7 +101,7 @@ exit
 
 ---
 
-# Active Information gathering, tools and methods
+### Active Information gathering, tools and methods
 
 ---
 
@@ -167,7 +167,7 @@ theHarvester -d mas.bg.ac.rs -b all -l 50
 > paid SaaS does the same output as harverster hunter.io
 ---
 
-# Downloading Tools, GitHub
+### Downloading Tools, GitHub
 
 **Why** just google -> Information Gathering Tools GitHub.
 
