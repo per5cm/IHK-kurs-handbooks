@@ -19,6 +19,7 @@
 1. File 
 2. Tools
 3. Network
+> if ur os on linux u need to make folder for config files like: mkdir -p "/home/Alchemist/VirtualBox VMs/Kali-007"
 4. Nat Networks
 5. Create click OK!
 6. Settings switch to NAT Network
