@@ -27,7 +27,7 @@ To host the pfSense virtual machine and provide internal (LAN) and external (WAN
 
 **Steps:**  
 1. Create a new VM in Proxmox:
-   - Name: `pfSense-FW`, name can warry its Optional for now. Specs as well optional.
+   - Name: `pfSense-FW`, name can wary its Optional for now. Specs as well optional.
    - OS: *Other / FreeBSD*
    - Disk: 20 GB
    - CPU: 1 core
@@ -39,9 +39,9 @@ To host the pfSense virtual machine and provide internal (LAN) and external (WAN
 4. Follow default installation:
    - Accept Auto (ZFS) installation.
    - 1. Proceed with Installation
-   - 2. Stripe - No redudancy (mirror RAID system lvl 1)
-   - 3. press Space to tick ok for harddrive selection
-   - 4. Compleate Instalation 
+   - 2. Stripe - No redundancy (mirror RAID system lvl 1)
+   - 3. press Space to tick ok for hard-drive selection
+   - 4. Complete Installation 
    - Reboot after install.
 5. Access pfSense via Proxmox console.
 
@@ -120,8 +120,8 @@ LAN = `192.178.99.214/24`, DHCP and IPv6 disabled.
 ## 5. Client Windows Configuration
 
 ```bash
-1. IP Address - 192.168.99.218 (or what other ip adress u use)
-2. Gateway - 192.168.99.214 (gateway is ur firewall lan adress)
+1. IP Address - 192.168.99.218 (or what other ip address u use)
+2. Gateway - 192.168.99.214 (gateway is ur firewall lan address)
 ```
 
 ## 6. WebConfigurator Access
@@ -130,7 +130,7 @@ LAN = `192.178.99.214/24`, DHCP and IPv6 disabled.
 To manage pfSense via browser with HTTPS for security.
 
 **Steps:**  
-1. From a client in the LAN, open browser -> `https://192.178.99.214/` **last octet shoud mirror VM**
+1. From a client in the LAN, open browser -> `https://192.178.99.214/` **last octet should mirror VM**
 2. Accept SSL certificate warning.
 3. Login credentials:
    - Username: `admin`
@@ -169,7 +169,7 @@ To follow a Default Deny → Allowlist principle for outbound traffic.
 
 | # | Protocol | Destination | Port | Description |
 |---|-----------|--------------|------|--------------|
-| 1 | ICMP | any | any | Allow Ping / Traceroute |
+| 1 | ICMP | any | any | Allow Ping / Trace-route |
 | 2 | TCP | any | 80 | HTTP outbound |
 | 3 | TCP | any | 443 | HTTPS outbound |
 | 4 | TCP/UDP | 192.178.99.147 | 53 | DNS to Domain Controller |

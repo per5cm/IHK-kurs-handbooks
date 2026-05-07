@@ -110,7 +110,7 @@ Inside `lab.local`:
 Add:
    - `192.168.99.214` <YOUR PFSENSE LAN IP ADDRESS>
 > Windows DNS resolves internal names.
-> pfSense fowards external queries.
+> pfSense forwards external queries.
 
 ---
 
@@ -132,7 +132,7 @@ Add:
 > weiter
 - Agree with options 
 > Ja, diese Optionen jetzt konfigurieren
-- New Scope Wizzard (Bereichserstellung-Assistent)
+- New Scope Wizard (Bereichserstellung-Assistent)
 > Must input ur LAN IP Address for standard gateway for clients ``192.168.99.214`` <- ur pfsense LAN ip
 - DNS-Server configuration 
 > Domain name `lab.local`. Check in window you see your servers IP address e.g. `192.168.99.213` and google dns eg `8.8.4.4` or `8.8.8.8`.

@@ -116,7 +116,7 @@ To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
 | Enable Windows Firewall (default) | Baseline protection |
 | Disable Remote Assistance & unneeded services | Reduces attack surface |
 | Apply latest Windows Updates | Closes known vulnerabilities |
-| Disable autoplay for removable media | Stops autorun attacks |
+| Disable auto-play for removable media | Stops auto-run attacks |
 | Configure BitLocker (optional) | Protects data integrity |
 | Create regular restore points & backups | Forensic traceability |
 

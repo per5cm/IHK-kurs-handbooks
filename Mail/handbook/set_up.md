@@ -1,4 +1,4 @@
-# Mailserver (Weretis) + Thunderbird Setup
+# Mail-server (Weretis) + Thunderbird Setup
 
 ## 0. Before You Start
 **Tip:** Ensure your Windows Server is ready.
@@ -33,13 +33,13 @@ New-NetFirewallRule -DisplayName "SMTP 587" -Direction Inbound -Protocol TCP -Lo
 New-NetFirewallRule -DisplayName "POP3 110" -Direction Inbound -Protocol TCP -LocalPort 110 -Action Allow
 New-NetFirewallRule -DisplayName "POP3 995" -Direction Inbound -Protocol TCP -LocalPort 995 -Action Allow
 New-NetFirewallRule -DisplayName "IMAP 143" -Direction Inbound -Protocol TCP -LocalPort 143 -Action Allow
-New-NetFirewallRule -DisplayName "IMAPS 993"-Direction Inbound -Protocol TCP -LocalPort 993 -Action Allow
+New-NetFirewallRule -DisplayName "IMAP 993"-Direction Inbound -Protocol TCP -LocalPort 993 -Action Allow
 ```
 
 ---
 
 
-## 3. Install Weretis Mailserver
+## 3. Install Weretis Mail-server
 **Why:** Provides SMTP (send) and IMAP (receive).
 
 1. Install Weretis (setup.exe).
