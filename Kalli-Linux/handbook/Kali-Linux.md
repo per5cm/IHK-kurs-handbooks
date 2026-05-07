@@ -28,7 +28,7 @@
 
 - Bridged -> for cable connection
 
-1. Promiscious mode: Allow All.
+1. Promiscuous mode: Allow All.
 
 ---
 
@@ -37,7 +37,7 @@
 ---
 ```bash
 sudo apt update && sudo apt full-upgrade -y
-# (remove uncecery installer files)
+# (remove unnecessary  installer files)
 sudo apt autoremove 
 # after, make a clean snapshot.
 ```
@@ -53,9 +53,9 @@ touch file1
 echo Today is a really good day. > file1
 # (shows content of a file1.)
 cat file1
-# (creates and opens file edittor.)
+# (creates and opens file editor.)
 nano file2
-# (creates python file with nano file3.py you can write directly python code in edittor.)
+# (creates python file with nano file3.py you can write directly python code in editor.)
 python file3.py
 # (go back in directory.)
 cd ..

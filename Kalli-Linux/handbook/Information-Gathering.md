@@ -1,7 +1,7 @@
 ## Active, Passive Information Gathering
 
 **Active** Active Kali Linux --> Information <--> Target Website --> Kali Linux.
-**Passive** Pasive Kali Linux --> Middle Source <--> Target Website --> Kali Linux.
+**Passive** Passive Kali Linux --> Middle Source <--> Target Website --> Kali Linux.
 
 ### Things to search for
 
@@ -51,7 +51,7 @@ whatweb arh.bg.ac.rs
 # more readable version (verbose query)
 whatweb arh.bg.ac.rs -v
 ```
-5. whatweb more aggresive scaning version (stealth for just baisc, aggresive for actual pen test)
+5. whatweb more aggressive scanning version (stealth for just basic, aggressive for actual pen test)
 ```bash
 # scan ur own ip address first because its your own
 sudo ifconfig
@@ -68,7 +68,7 @@ whatweb 192.168.178.1-192.168.178.255 --aggression 3 -v --no-errors --log-verbos
 
 > Sometimes Tools will break or not work! its good practice to have multiple tools.
 
-6. gathering emails using harverster tools of Kali linux.
+6. gathering emails using harvester tools of Kali linux.
 ```bash
 # in terminal looking up available commands
 theHarvester --help
@@ -76,14 +76,14 @@ theHarvester --help
 # searching for hosts usernames and emails.
 theHarvester -d mas.bg.ac.rs -b all -l 50
 ```
-> paid SaaS does the same output as harverster hunter.io
+> paid SaaS does the same output as harvester hunter.io
 ---
 
 ### Downloading Tools, GitHub
 
 **Why** just google -> Information Gathering Tools GitHub.
 
-1. RED_HAWK all in one tool for pentesters.
+1. RED_HAWK all in one tool for pen-testers.
 ```bash
 # install via github link
 git clone https://github.com/Tuhinshubhra/RED_HAWK
@@ -100,7 +100,7 @@ php rhawk.php
 # install red hawk updates, when u run red hawk from terminal
 fix
 ```
-> later we will download bunch of other usefull tools.
+> later we will download bunch of other useful tools.
 
 ---
 

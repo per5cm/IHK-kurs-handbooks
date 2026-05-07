@@ -41,7 +41,7 @@ Internet
 ### a. Static IP
 
 1. Server Manager -> Local Server
-2. Clickt Ethernet
+2. Click Ethernet
 3. IPv4 -> Properties (Eigenschaften)
 4. Set:
       - IP: `192.168.99.213/24`
@@ -64,7 +64,7 @@ Internet
    - Accept features
    - Install
 
-**Compleate DHCP post-installation wizard**
+**Complete DHCP post-installation wizard**
 
 ---
 
@@ -82,13 +82,13 @@ Internet
 
 ---
 
-### d. DNS Foward Lookup Zone
+### d. DNS Forward Lookup Zone
 
 *DNS Manager*
 
 1. Tools -> DNS
-2. Create Foward Lookup Zone
-3. Right Click Foward Lookup Zone
+2. Create Forward Lookup Zone
+3. Right Click Forward Lookup Zone
 4. New Zone
    - Zone Type: Primary Zone
    - Zone name: lab.local
@@ -99,16 +99,16 @@ Internet
 Inside `lab.local`:
 1. Right click -> New Host(A) (Neuer Host(A))
    - Name: `srv-dc01`
-   - IP: ``192.168.99.214`` (host ip is the pfsense lan ip adress)
+   - IP: ``192.168.99.214`` (host ip is the pfsense lan ip address)
    - V Create associated PTR record 
    >this checkbox matters. it auto wires reverse lookup.
 
-**DNS Manager -> Server Properties -> Fowarders**
+**DNS Manager -> Server Properties -> Forwarders**
 1. Right-click your server in manager(WIN-85LMUKPGSH etc.)
 2. Properties (Eigenschaften)
-3. Fowarders (Weiterleitungen)
+3. Forwarders (Weiterleitungen)
 Add:
-   - `192.168.99.214` <YOUR PFSENSE LAN IP ADDRES>
+   - `192.168.99.214` <YOUR PFSENSE LAN IP ADDRESS>
 > Windows DNS resolves internal names.
 > pfSense fowards external queries.
 
@@ -127,15 +127,15 @@ Add:
 - Mask: ``255.255.255.0``
 > Bonus points
 - Exclude: ``192.168.213-214`` (your own server IP and Host IP example ur pfsense LAN)
-> Leaste time Default is fine.
+> Lease time Default is fine.
 - Lease Duration - default 8 days
 > weiter
 - Agree with options 
 > Ja, diese Optionen jetzt konfigurieren
 - New Scope Wizzard (Bereichserstellung-Assistent)
-> Must input ur LAN IP Adress for standard gateway for clients ``192.168.99.214`` <- ur pfsense LAN ip
+> Must input ur LAN IP Address for standard gateway for clients ``192.168.99.214`` <- ur pfsense LAN ip
 - DNS-Server configuration 
-> Domain name `lab.local`. Check in window you see your servers IP adress e.g. `192.168.99.213` and google dns eg `8.8.4.4` or `8.8.8.8`.
+> Domain name `lab.local`. Check in window you see your servers IP address e.g. `192.168.99.213` and google dns eg `8.8.4.4` or `8.8.8.8`.
 - WIN-Server
 > For short leave it empty.
 ---
@@ -149,12 +149,12 @@ Add:
 
 **Right click Scope, then configurate options**
 > Bereichsoptionen -> Optionen konfigurieren
-- 003 Router: `192.168.99.214` - your firewall IP adress
-- 006 DNS Server: `192.168.99.213` - your server IP adress
+- 003 Router: `192.168.99.214` - your firewall IP address
+- 006 DNS Server: `192.168.99.213` - your server IP address
 - 015 DNS Domain Name: `lab.local` - name so the scope knows in what domain it works
 
 **Finish wizard -> Activate Scope**
-> Missconfigure and nothing works
+> Miss-configure and nothing works
 
 **Clients -> Windows DNS**
 **Windows DNS -> pfsense(forwarder) -> Internet**
@@ -184,7 +184,7 @@ Add:
 
 ## 4. PfSense
 
-1. Open a bowser 
+1. Open a browser 
 2. go to: `https://192.168.99.214` (whatever ur LAN IP is)
 3. Username: ``admin`` -> Password: ``pfsense`` (default)
 4. Top menu bar Service -> DHCP Server
@@ -199,7 +199,7 @@ Add:
 0) Logout
 1) Assign Interfaces
 2) Set Interface(s) IP address
-> option 3 `Reset webConfigurator password`
+> option 3 `Reset web-Configurator password`
 
 **Order matters. *Nudelholz!.***
 
