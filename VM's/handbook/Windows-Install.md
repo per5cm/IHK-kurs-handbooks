@@ -2,22 +2,6 @@
 
 ---
 
-## 0. Overview
-
-**Goal:**  
-To install and configure Windows 11 within a virtualized environment (Proxmox VE), following BSI-style best practices for security, system hygiene, and lab reproducibility.
-
-**Environment:**  
-- **Platform:** Proxmox Virtual Environment (VE)  
-- **Operating System:** Windows 11 Pro (ISO)  
-- **Hardware (VM):** 2 CPUs | 4096 MB RAM | 60 GB Disk  
-- **Network:** 1 NIC (Bridged / NAT depending on lab goal)  
-- **Access:** RDP (optional) / Console / SPICE  
-- **DHCP:** Enabled by default from upstream device (e.g. pfSense lab router)  
-- **IPv6:** Optional (disable if not used in lab environment)
-
----
-
 ## 0. a) Proxmox Setup
 
 **Why:**  
@@ -56,10 +40,10 @@ To perform a clean installation and avoid OEM bloatware or unintended configurat
 
 ---
 
-## 2. Out-of-Box Experience (OOBE)
+## 2. Out-of-Box 
 
 **Why:**  
-To ensure privacy-friendly, local-account-first configuration.
+To ensure local-account-first configuration.
 
 **Steps:**  
 1. Select region -> Keyboard layout.  
@@ -72,22 +56,6 @@ To ensure privacy-friendly, local-account-first configuration.
 3. Create local administrator account.  
 4. Disable Cortana, data collection, location services if not needed.  
 5. Choose “Device for personal use”.
-
----
-
-## 3. Driver Installation (VirtIO)
-
-**Why:**  
-To enable optimized I/O performance under Proxmox.
-
-**Steps:**  
-1. Mount VirtIO ISO in VM.  
-2. Open Device Manager -> Right-click unknown devices -> “Update driver”.  
-3. Browse to mounted VirtIO CD drive -> Select corresponding folders:  
-   - NetKVM (for network)  
-   - Balloon (for memory management)  
-   - vioscsi (for storage)  
-4. Verify no yellow exclamation marks remain.
 
 ---
 
@@ -108,7 +76,7 @@ To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
 
 ---
 
-## 5. System Hardening (BSI-Aligned Basics)
+## 5. System Hardening 
 
 | Description | Reason |
 |--------------|--------|
@@ -116,7 +84,6 @@ To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
 | Enable Windows Firewall (default) | Baseline protection |
 | Disable Remote Assistance & unneeded services | Reduces attack surface |
 | Apply latest Windows Updates | Closes known vulnerabilities |
-| Disable auto-play for removable media | Stops auto-run attacks |
 | Configure BitLocker (optional) | Protects data integrity |
 | Create regular restore points & backups | Forensic traceability |
 
@@ -152,10 +119,8 @@ To ensure proper integration with lab infrastructure (e.g. pfSense gateway).
 
 ## 8. Notes for Future Improvement
 
-- Integrate into Active Directory lab (once DC is ready).  
-- Test RDP and VNC access under firewall rules.  
+- Integrate into Active Directory lab (once DC is ready).   
 - Add Group Policy templates for automated hardening.  
-- Evaluate Windows Sandbox and Hyper-V for secure testing.
 
 ---
 
