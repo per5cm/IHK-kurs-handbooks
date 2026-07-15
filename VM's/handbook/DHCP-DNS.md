@@ -61,6 +61,7 @@ Internet
    - Check: 
      > V DNS Server 
      > V DHCP Server
+     > V Active Directory
    - Accept features
    - Install
 
