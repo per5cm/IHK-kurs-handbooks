@@ -7,8 +7,8 @@ Here we spawn, snapshot, and obliterate worlds before lunch.
 Hardware is merely a suggestion — the hypervisor is god, and rebooting is prayer.
 
 ## Index
-- [Windows SetUp](handbook/Kalo-Linux.md)
-- [VM Firewall Console SetUp](handbook/Information-Gathering.md)
+- [Kali-Linux](handbook/Kali-Linux.md)
+- [Information-Gathering](handbook/Information-Gathering.md)
 <!-- - [VM DHCP DNS pfsense SetUp)](handbook/VM_DHCP_DNS.md)
 - [Appendix](Appendix.md) -->
 
