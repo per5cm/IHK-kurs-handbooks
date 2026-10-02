@@ -1,6 +1,6 @@
 ## Epigraph
 
-**Main Menu - Enter at your peril.**
+**Main Menu**
 
 ## Index
 - [Active Directory](AD/AD.md)
