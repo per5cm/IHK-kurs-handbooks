@@ -14,7 +14,7 @@
 
 ---
 
-- Network -> NAT Network for WiFi connection
+- Network --> NAT Network for WiFi connection
 
 1. File 
 2. Tools
